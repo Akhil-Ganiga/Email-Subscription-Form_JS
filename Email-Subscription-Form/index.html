@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Subscription Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Coming soon</h1>
+      <form name="submit-to-google-sheet">
+        <input type="email" name="Email" placeholder="Your email id" required />
+        <button type="submit">
+          <img src="send-icon.png" width="30px" alt="" />
+        </button>
+      </form>
+      <span id="msg"></span>
+      <!-- Thank you for Subscribing -->
+    </div>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxbDpEdAlVTCL4POpdwe-ZIcxL0D7LEknbTuZGKHYMQTO8qJ5IkRjA_KgaA3snYesk3/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Thank you for Subscribing";
+            setTimeout(function () {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
