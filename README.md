@@ -1,1 +1,3 @@
 The Email Subscription Form is a web-based form that allows users to subscribe to receive updates, newsletters, or promotional offers via email. Built using HTML for structure, CSS for styling, and JavaScript for interactivity, the form provides a seamless user experience. Users can input their email addresses and submit the form to subscribe. With client-side validation, the form ensures accurate email submissions and provides feedback to users. This form serves as a valuable tool for businesses and organizations to grow their email subscriber list and engage with their audience effectively.
+All the entered email will store here
+https://docs.google.com/spreadsheets/d/1t4mael4AXU1rVa61-aLazeFaskFB7MuzZXZKV8FGMb4/edit#gid=0
